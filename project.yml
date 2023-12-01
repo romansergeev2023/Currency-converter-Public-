@@ -1,0 +1,50 @@
+name: MyProject
+options:
+  bundleIdPrefix: com.romancompany
+targets:
+  MyAppCommon:
+    type: framework
+    platform: iOS
+    deploymentTarget: "14.0"
+    sources: [MyAppCommon]
+    info:
+      path: MyAppCommon/Info.plist
+  MyApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "14.0"
+    sources: [MyApp]
+    dependencies:
+      - target: MyAppCommon
+    info:
+      path: MyApp/Info.plist
+    settings:
+      base:
+        ASSETCATALOG_COMPILER_APPICON_NAME: ""
+    postCompileScripts:
+      - script: "mint run swiftformat . --swiftversion 5.5"
+        name: SwiftFormat
+      - script: "mint run swiftlint"
+        name: SwiftLint
+      - script: "mint run swiftgen"
+        name: SwiftGen
+  MyAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [MyAppTests]
+    dependencies:
+      - target: MyApp
+      - target: MyAppCommon
+    info:
+      path: MyAppTests/Info.plist
+  MyAppUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [MyAppUITests]
+    dependencies:
+      - target: MyApp
+      - target: MyAppCommon
+    info:
+      path: MyAppUITests/Info.plist
+
+

@@ -1,0 +1,20 @@
+PODS:
+  - BrightFutures (8.2.0)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - BrightFutures
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - BrightFutures
+    - SnapKit
+
+SPEC CHECKSUMS:
+  BrightFutures: 67e0e8cd974ab9f6c04650cc64153f7adf1ec489
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: abe79e1c0881de1cae76406f470101ed2be7e71b
+
+COCOAPODS: 1.11.3

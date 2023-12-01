@@ -1,0 +1,8 @@
+MyApp/Info.plist
+MyProject.xcodeproj/
+MyProject.xcworkspace/
+Pods/
+MyApp/Generated
+MyAppTests/Info.plist
+MyAppUITests/Info.plist
+MyAppCommon/Info.plist
